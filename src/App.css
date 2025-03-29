@@ -1,0 +1,237 @@
+/* Fundo com gradiente e layout */
+body {
+  background: linear-gradient(to right, #1e3c72, #2a5298, #6a82fb);
+
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+/* Contêiner principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilo do card principal */
+.card {
+  background-color: #2d3748;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Título do componente */
+.text-4xl {
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.text-yellow-400 {
+  color: #fbbf24; /* Cor vibrante de amarelo */
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* Descrição abaixo do título */
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-gray-200 {
+  color: #e5e7eb;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo do campo de input */
+input[type="text"], .ant-input {
+  background-color: #4a5568;
+  color: white;
+  border: 1px solid #718096;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+/* Botão principal */
+.button, .ant-btn {
+  background-color: #fbbf24;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover, .ant-btn:hover {
+  background-color: #ff7f00;
+  transform: scale(1.05);
+}
+
+/* Card de perfil */
+.card-body {
+  text-align: center;
+}
+
+.card-body img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  margin-top: 1rem;
+  border: 4px solid #fbbf24;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-body img:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-body h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.card-body .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body .flex div {
+  display: flex;
+  align-items: center;
+}
+
+.card-body .flex p {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: #e2e8f0; /* Cor mais clara */
+}
+
+.card-body .text-sm {
+  font-size: 0.875rem;
+}
+
+.text-gray-300 {
+  color: #e2e8f0;
+}
+
+.text-green-500 {
+  color: #48bb78;
+}
+
+.text-red-500 {
+  color: #f56565;
+}
+
+.text-yellow-400 {
+  color: #fbbf24;
+}
+
+/* Gráfico */
+.line-chart {
+  margin-top: 2rem;
+  max-width: 100%;
+  height: 250px;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+/* Estilo para o botão de "Mostrar Mais" */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Estilos para o botão de "Mostrar Mais" */
+button {
+  background-color: #fbbf24;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #ff7f00;
+  transform: scale(1.05);
+}
+
+/* Tamanho mínimo do Skeleton */
+.skeleton {
+  height: 250px;
+  background-color: #718096;
+}
+
+/* Explicações de métricas */
+.mt-4 h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 0.25rem;
+}
+
+/* Layout e responsividade */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+
+  .card-body img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .button, .ant-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+}
