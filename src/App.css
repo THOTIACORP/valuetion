@@ -31,6 +31,57 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Container para o input e o botão */
+.input-button-container {
+  display: flex;
+  align-items: center; /* Alinha verticalmente os elementos */
+  justify-content: space-between; /* Garante que o input e o botão fiquem na mesma linha */
+  gap: 10px; /* Adiciona um pequeno espaçamento entre o input e o botão */
+  width: 100%;
+}
+
+/* Estilo do campo de input */
+input[type="text"], .ant-input {
+  background-color: #4a5568;
+  color: white;
+  border: 1px solid #718096;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  flex-grow: 1; /* Faz o input ocupar o máximo de espaço disponível */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+input[type="text"]:focus, .ant-input:focus {
+  border-color: #fbbf24; /* Destaca a borda ao focar no input */
+  box-shadow: 0 0 5px rgba(255, 191, 36, 0.6); /* Efeito de brilho ao focar */
+}
+
+/* Estilo do botão */
+.button, .ant-btn {
+  background-color: #fbbf24;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover, .ant-btn:hover {
+  background-color: #ff7f00;
+  transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
+}
+
+.button:active, .ant-btn:active {
+  transform: scale(1.02); /* Efeito de clique */
+}
+
+/* Tamanho mínimo para garantir que o botão não fique pequeno */
+.button, .ant-btn {
+  min-width: 120px; /* Garante que o botão tenha um tamanho adequado */
+}
 
 
 /* Título do componente */
@@ -95,8 +146,8 @@ input[type="text"], .ant-input {
 }
 
 .card-body img {
-  width: 128px;
-  height: 128px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   margin-top: 1rem;
   border: 4px solid #fbbf24;
@@ -148,6 +199,9 @@ input[type="text"], .ant-input {
 
 .text-yellow-400 {
   color: #fbbf24;
+}
+.text-center {
+  text-align: center;
 }
 
 /* Gráfico */
@@ -234,4 +288,28 @@ ul li {
   .flex {
     flex-direction: column;
   }
+}
+.button-visitar-desenvolvedor {
+  background-color: #4CAF50; /* Cor verde */
+  color: white;
+  padding: 12px 24px; /* Tamanho maior para tornar o botão mais chamativo */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 50px; /* Bordas arredondadas para um efeito mais suave */
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase; /* Deixar o texto em maiúsculas */
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+.button-visitar-desenvolvedor:hover {
+  background-color: #45a049; /* Cor mais escura ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar um efeito de destaque */
+}
+
+.button-visitar-desenvolvedor:active {
+  background-color: #388e3c; /* Cor ainda mais escura quando pressionado */
+  transform: translateY(1px); /* Leve deslocamento ao clicar */
+  box-shadow: none; /* Remover sombra ao clicar */
 }
