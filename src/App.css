@@ -1,315 +1,159 @@
-/* Fundo com gradiente e layout */
+/* Remover o scroll horizontal */
 body {
   background: linear-gradient(to right, #1e3c72, #2a5298, #6a82fb);
-
   margin: 0;
-  display: flex;
+  min-height: 100%;
   justify-content: center;
   align-items: center;
   color: white;
+  display: flex;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  /* Impede o scroll horizontal */
+  width: 100%;
+  /* Garante que o body não ultrapasse a tela */
 }
-/* Contêiner principal */
+
+/* Garantir que o container não ultrapasse a largura */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  /* Ajusta o container para garantir que ocupe toda a tela */
+  max-width: 100%;
+  /* Garante que o container não ultrapasse a tela */
+  overflow: hidden;
+  /* Impede o overflow */
+}
+
+/* Ajustes nos itens de perfil */
+.profile-card {
+  background-color: #fff;
+  width: 100%;
+  /* Garante que o card não ultrapasse a tela */
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Ajusta o box-model para não ultrapassar a largura */
+}
+
+/* Garantir que os elementos dentro do card não ultrapassem a tela */
+.card {
+  background-color: #2d2d2d;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 100%;
   box-sizing: border-box;
 }
 
-/* Estilo do card principal */
-.card {
-  background-color: #2d3748;
+/* Ajustes para o input */
+.ant-input {
+  width: 100%;
+  /* Ajusta o campo de input para ocupar toda a largura disponível */
+  background-color: #2d2d2d;
+  border: 1px solid #444;
   color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  max-width: 800px;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-/* Container para o input e o botão */
-.input-button-container {
-  display: flex;
-  align-items: center; /* Alinha verticalmente os elementos */
-  justify-content: space-between; /* Garante que o input e o botão fiquem na mesma linha */
-  gap: 10px; /* Adiciona um pequeno espaçamento entre o input e o botão */
-  width: 100%;
-}
-
-/* Estilo do campo de input */
-input[type="text"], .ant-input {
-  background-color: #4a5568;
-  color: white;
-  border: 1px solid #718096;
   border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  flex-grow: 1; /* Faz o input ocupar o máximo de espaço disponível */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+  padding: 12px;
 }
 
-input[type="text"]:focus, .ant-input:focus {
-  border-color: #fbbf24; /* Destaca a borda ao focar no input */
-  box-shadow: 0 0 5px rgba(255, 191, 36, 0.6); /* Efeito de brilho ao focar */
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    /* Reduz o tamanho do título em telas pequenas */
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    /* Reduz o tamanho do subtítulo em telas pequenas */
+  }
+
+  .button {
+    width: 100%;
+    /* Botões ocupam toda a largura da tela em dispositivos móveis */
+    padding: 10px;
+  }
+
+  .profile-card {
+    width: 90%;
+    /* Reduz a largura do card para caber em telas pequenas */
+  }
+
+  .ant-input {
+    width: 100%;
+    /* Ajusta o input para ocupar toda a largura em telas pequenas */
+  }
+
+  .card {
+    padding: 1rem;
+    /* Ajusta o padding do card para melhor se adaptar a telas pequenas */
+  }
 }
 
-/* Estilo do botão */
-.button, .ant-btn {
-  background-color: #fbbf24;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
-  border: none;
-  cursor: pointer;
-}
-
-.button:hover, .ant-btn:hover {
-  background-color: #ff7f00;
-  transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
-}
-
-.button:active, .ant-btn:active {
-  transform: scale(1.02); /* Efeito de clique */
-}
-
-/* Tamanho mínimo para garantir que o botão não fique pequeno */
-.button, .ant-btn {
-  min-width: 120px; /* Garante que o botão tenha um tamanho adequado */
-}
-
-
-/* Título do componente */
-.text-4xl {
-  font-size: 2.25rem;
+/* Cabeçalho */
+h1 {
+  font-size: 2.5rem;
   font-weight: 800;
-}
-
-.font-extrabold {
-  font-weight: 800;
-}
-
-.text-yellow-400 {
-  color: #fbbf24; /* Cor vibrante de amarelo */
-}
-
-.mb-4 {
+  color: #fcd34d;
+  text-align: center;
   margin-bottom: 1rem;
 }
-
-/* Descrição abaixo do título */
-.text-lg {
-  font-size: 1.125rem;
+@media (max-width: 600px) {
+  .chart-container {
+    width: 90% !important;
+    height: 250px !important; /* Ajuste a altura para dispositivos móveis */
+  }
 }
 
-.text-gray-200 {
-  color: #e5e7eb;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-/* Estilo do campo de input */
-input[type="text"], .ant-input {
-  background-color: #4a5568;
-  color: white;
-  border: 1px solid #718096;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-}
-
-/* Botão principal */
-.button, .ant-btn {
-  background-color: #fbbf24;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.button:hover, .ant-btn:hover {
-  background-color: #ff7f00;
-  transform: scale(1.05);
-}
-
-/* Card de perfil */
-.card-body {
-  text-align: center;
-}
-
-.card-body img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-top: 1rem;
-  border: 4px solid #fbbf24;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease;
-}
-
-.card-body img:hover {
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
-}
-
-.card-body h2 {
+h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 1rem;
-}
-
-.card-body .flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card-body .flex div {
-  display: flex;
-  align-items: center;
-}
-
-.card-body .flex p {
-  margin-left: 0.5rem;
-  font-size: 0.875rem;
-  color: #e2e8f0; /* Cor mais clara */
-}
-
-.card-body .text-sm {
-  font-size: 0.875rem;
-}
-
-.text-gray-300 {
-  color: #e2e8f0;
-}
-
-.text-green-500 {
-  color: #48bb78;
-}
-
-.text-red-500 {
-  color: #f56565;
-}
-
-.text-yellow-400 {
-  color: #fbbf24;
-}
-.text-center {
+  color: #ffffff;
   text-align: center;
-}
-
-/* Gráfico */
-.line-chart {
-  margin-top: 2rem;
-  max-width: 100%;
-  height: 250px;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-/* Estilo para o botão de "Mostrar Mais" */
-.mt-4 {
   margin-top: 1rem;
 }
 
-button:focus {
-  outline: none;
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f1f1f1;
 }
 
-/* Estilos para o botão de "Mostrar Mais" */
-button {
-  background-color: #fbbf24;
+/* Ajustes para o botão flutuante */
+.button-supermoderno-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.button-supermoderno {
+  background-color: #4CAF50;
   color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 50px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-  background-color: #ff7f00;
-  transform: scale(1.05);
-}
-
-/* Tamanho mínimo do Skeleton */
-.skeleton {
-  height: 250px;
-  background-color: #718096;
-}
-
-/* Explicações de métricas */
-.mt-4 h4 {
+  text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+.button-supermoderno:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-ul li {
-  margin-bottom: 0.25rem;
-}
-
-/* Layout e responsividade */
-@media (max-width: 768px) {
-  .card {
-    padding: 15px;
-  }
-
-  .card-body img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .text-4xl {
-    font-size: 1.75rem;
-  }
-
-  .text-lg {
-    font-size: 1rem;
-  }
-
-  .button, .ant-btn {
-    padding: 0.5rem 1rem;
-  }
-
-  .flex {
-    flex-direction: column;
-  }
-}
-.button-visitar-desenvolvedor {
-  background-color: #4CAF50; /* Cor verde */
-  color: white;
-  padding: 12px 24px; /* Tamanho maior para tornar o botão mais chamativo */
-  font-size: 16px; /* Tamanho da fonte */
-  border-radius: 50px; /* Bordas arredondadas para um efeito mais suave */
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase; /* Deixar o texto em maiúsculas */
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
-}
-
-.button-visitar-desenvolvedor:hover {
-  background-color: #45a049; /* Cor mais escura ao passar o mouse */
-  transform: translateY(-2px); /* Efeito de elevação */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar um efeito de destaque */
-}
-
-.button-visitar-desenvolvedor:active {
-  background-color: #388e3c; /* Cor ainda mais escura quando pressionado */
-  transform: translateY(1px); /* Leve deslocamento ao clicar */
-  box-shadow: none; /* Remover sombra ao clicar */
+.button-supermoderno:active {
+  background-color: #388e3c;
+  transform: translateY(1px);
+  box-shadow: none;
 }

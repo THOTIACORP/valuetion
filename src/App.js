@@ -4,7 +4,7 @@ import GitHubProfileEvaluator from './pages/GitHubProfileEvaluator';
 
 function App() {
   return (
-<GitHubProfileEvaluator/>
+    <GitHubProfileEvaluator />
   );
 }
 
